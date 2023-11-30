@@ -2,9 +2,9 @@
 
 class Player {
     arr = [
-        { path: './music/song1.mp3', artist: 'First Artist', song: 'song1' },
-        { path: './music/song2.mp3', artist: 'Second Artist', song: 'song2' },
-        { path: './music/song3.mp3', artist: 'Third Artist', song: 'song3' }];
+        { path: './music/song1.mp3', artist: 'First Artist', song: 'song1', like: false },
+        { path: './music/song2.mp3', artist: 'Second Artist', song: 'song2', like: false },
+        { path: './music/song3.mp3', artist: 'Third Artist', song: 'song3', like: false }];
 
 
     bindAction() {
@@ -17,7 +17,6 @@ class Player {
         let artist_name = document.querySelector('h2');
         let flag = false;
         let current_index_song = 0;
-        let like_bool = false;
 
         
 
@@ -55,27 +54,35 @@ class Player {
             song_name.innerHTML = this.arr[current_index_song].song
         })
 
-like.addEventListener('click',()=>{
-    if (!like_bool) {
-        like_bool = true;
-        like.style = 'background-image: url(./assets/Icon.svg)'
 
-    } else {
-        like_bool = false;
-        like.style = 'background-image: url(./assets/FavBtn.svg)'
-
-    }
-})
 
     }
 
+likeSong(){
+    if (this.arr[current_index_song].like = true)  like.style = 'background-image: url(./assets/Icon.svg)'
+    
+    like.addEventListener('click',()=>{
+        if (this.arr[current_index_song].like) {
+            like.style = 'background-image: url(./assets/FavBtn.svg)'
+            this.arr[current_index_song].like = false;
+    
+        } else {
+          
+    
+            like.style = 'background-image: url(./assets/Icon.svg)'
+            this.arr[current_index_song].like = true;
+    
+        }
+    })
+}
 
 }
 
 
 
 const player = new Player();
-player.bindAction()
+player.bindAction();
+player.likeSong()
 
 
 
