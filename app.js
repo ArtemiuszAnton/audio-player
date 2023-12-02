@@ -65,13 +65,9 @@ likeSong(){
         if (this.arr[current_index_song].like) {
             like.style = 'background-image: url(./assets/FavBtn.svg)'
             this.arr[current_index_song].like = false;
-    
         } else {
-          
-    
             like.style = 'background-image: url(./assets/Icon.svg)'
             this.arr[current_index_song].like = true;
-    
         }
     })
 }
