@@ -19,7 +19,6 @@ class Player {
         let current_index_song = 0;
 
         
-
         play.addEventListener('click', () => {
             if (!flag) {
                 audio.play();
@@ -53,9 +52,6 @@ class Player {
             artist_name.innerHTML = this.arr[current_index_song].artist
             song_name.innerHTML = this.arr[current_index_song].song
         })
-
-
-
     }
 
 likeSong(){
