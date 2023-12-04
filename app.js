@@ -53,6 +53,7 @@ class Player {
             song_name.innerHTML = this.arr[current_index_song].song
         })
     }
+    
 
 likeSong(){
     if (this.arr[current_index_song].like = true)  like.style = 'background-image: url(./assets/Icon.svg)'
